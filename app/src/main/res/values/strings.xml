@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CaculatorApp</string>
+    <string name="result_format">= %s</string>
+    <string name="caculate">Caculate</string>
+    <string name="ok">OK</string>
+    <string name="error_invalid_input" translatable="false">Biểu thức chưa đúng, vui lòng nhập lại</string>
+    <string name="input_hint">0</string>
+    <string name="equal">=</string>
+    <string name="clear">C</string>
+</resources>
