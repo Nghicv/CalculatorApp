@@ -16,16 +16,6 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
 
     val inputErrorSubject: PublishSubject<Empty> = PublishSubject.create()
 
-    private fun validateInput(expression: String?): Boolean {
-
-        return if (expression?.isBlank() == true) {
-            false
-        } else {
-            val pattern = Pattern.compile(REGEX_ARITHMETIC_EXPRESSION)
-            pattern.matcher(expression).matches()
-        }
-    }
-
     fun onResult() {
         val input = expression.get()?.trim()
         if (validateInput(input)) {
@@ -39,6 +29,16 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
     fun onClear() {
         expression.set(null)
         result.set(null)
+    }
+
+    private fun validateInput(expression: String?): Boolean {
+
+        return if (expression?.isBlank() == true) {
+            false
+        } else {
+            val pattern = Pattern.compile(REGEX_ARITHMETIC_EXPRESSION)
+            pattern.matcher(expression).matches()
+        }
     }
 
     private fun computeWithExp4j(expression: String) {
