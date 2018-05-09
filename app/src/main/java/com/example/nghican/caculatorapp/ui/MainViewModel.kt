@@ -17,7 +17,7 @@ class MainViewModel(application: Application) : BaseViewModel(application) {
     val inputErrorSubject: PublishSubject<Empty> = PublishSubject.create()
 
     fun onResult() {
-        val input = expression.get()?.trim()
+        val input = expression.get()?.trim()?.replace(" ", "")
         if (validateInput(input)) {
             //computeWithExp4j(input!!)
             computeWithShuntingYardAlgorithm(input!!).toString()
